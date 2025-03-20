@@ -1,0 +1,13 @@
+<div class="landing-container" *ngIf="!showResume">
+    <img src="assets/profile.jpg" alt="Profile Photo" class="profile-photo">
+    <button (click)="showResumePage()">View Resume</button>
+  </div>
+  
+  <div *ngIf="showResume">
+    <app-about></app-about>
+    <app-experience></app-experience>
+    <app-education></app-education>
+    <app-projects></app-projects>
+    <app-skills></app-skills>
+  </div>
+  

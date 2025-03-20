@@ -1,0 +1,14 @@
+.contact-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-card {
+    background: #8e44ad;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}

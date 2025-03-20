@@ -1,0 +1,25 @@
+<div class="profile-container">
+    
+    <div class="profile-image">
+        <img src="src\app\assets\sai.jpg" alt="Profile Photo">
+    </div>
+  
+  
+    <div class="profile-info">
+        <h1>Sowmya</h1>
+        <h2>Interactive Resume</h2>
+        <p>Thankyou for Visiting My Website</p>
+    </div>
+  
+   
+    <div class="component-buttons">
+        <button *ngFor="let option of navOptions" (click)="navigateTo(option.id)" class="btn">
+            {{ option.label }}
+        </button>
+    </div>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a><br>
+        <a href="https://github.com/sairam017" target="_blank">GitHub</a>
+    </div>
+</div>

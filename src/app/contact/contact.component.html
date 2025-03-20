@@ -1,0 +1,9 @@
+<div class="contact-container">
+    <h2>Contact Me</h2>
+    <div *ngFor="let contact of contactList" class="contact-card">
+        <h3>{{ contact.name }}</h3>
+        <p><strong>Email:</strong> {{ contact.email }}</p>
+        <p><strong>Phone:</strong> {{ contact.phone }}</p>
+        <p><strong>Message:</strong> {{ contact.message }}</p>
+    </div>
+</div>

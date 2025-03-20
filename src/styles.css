@@ -1,0 +1,17 @@
+body {
+    background: linear-gradient(135deg, #1e788a, #33ea95); /* Deep Blue to Vibrant Purple */
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white; /* Ensuring text is readable on dark background */
+}
+
+html, body {
+    height: 100%;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
