@@ -1,6 +1,15 @@
 
 <div class="experience-container">
-  <h2> Experience</h2>
+  <div class="section-header">
+    <h2>Experience</h2>
+    <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+      <i class="edit-icon">✏️</i> Edit
+    </button>
+  </div>
+  
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  
   <div *ngFor="let exp of experiences" class="experience-card">
     <h3>{{ exp.company }}</h3>
     <p><strong>Role:</strong> {{ exp.role }}</p>
@@ -8,3 +17,9 @@
   </div>
 </div>
 
+<app-edit-experience 
+  *ngIf="showEditPopup" 
+  [experiences]="experiences"
+  (saveExperiences)="saveExperiences($event)"
+  (closePopup)="closeEditPopup()"
+></app-edit-experience>

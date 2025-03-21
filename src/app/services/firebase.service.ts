@@ -19,4 +19,14 @@ export class FirebaseService {
   updateAboutData(aboutData: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/resume/about.json`, aboutData);
   }
+
+  // Get experience data from Firebase
+  getExperienceData(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/resume/experience.json`);
+  }
+
+  // Update experience data in Firebase
+  updateExperienceData(experienceData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/resume/experience.json`, experienceData);
+  }
 }
