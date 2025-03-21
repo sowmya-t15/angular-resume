@@ -1,23 +1,26 @@
-
-
-
-
-    <!-- Landing Page -->
+<!-- Landing Page -->
 <div *ngIf="!showContent" class="landing-page">
-   <h1>Welcome to My Portfolio</h1>
-
-
-   
-   <button (click)="enterApp()">Enter</button>
- </div>
+  <div class="landing-content">
+    <h1>Welcome to My Portfolio</h1>
+    <p class="tagline">Explore my professional journey and skills</p>
+    <div class="profile-image">
+      <!-- You can replace this with an actual image path -->
+      <img src="assets/profile.jpeg" alt="Profile Image">
+    </div>
+    <p class="intro-text">I'm a passionate developer with expertise in web technologies and a drive for creating impactful solutions.</p>
+    <button class="enter-button" (click)="enterApp()">
+      <span>Enter Portfolio</span>
+      <i class="arrow-icon">→</i>
+    </button>
+  </div>
+</div>
  
- <!-- Main Content -->
- <div *ngIf="showContent">
-   <app-main></app-main> <!-- ✅ This will load MainComponent -->
-   
-   <!-- Right side - Dynamic Content -->
-   <main class="main-content">
-     <router-outlet></router-outlet>
-   </main>
- </div>
- 
+<!-- Main Content -->
+<div *ngIf="showContent">
+  <app-main></app-main> <!-- ✅ This will load MainComponent -->
+  
+  <!-- Right side - Dynamic Content -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
