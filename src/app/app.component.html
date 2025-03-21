@@ -1,4 +1,23 @@
-<app-main></app-main> <!-- ✅ This will load MainComponent -->
- <!-- Right side - Dynamic Content -->
- <main class="main-content">
-    <router-outlet></router-outlet>
+
+
+
+
+    <!-- Landing Page -->
+<div *ngIf="!showContent" class="landing-page">
+   <h1>Welcome to My Portfolio</h1>
+
+
+   
+   <button (click)="enterApp()">Enter</button>
+ </div>
+ 
+ <!-- Main Content -->
+ <div *ngIf="showContent">
+   <app-main></app-main> <!-- ✅ This will load MainComponent -->
+   
+   <!-- Right side - Dynamic Content -->
+   <main class="main-content">
+     <router-outlet></router-outlet>
+   </main>
+ </div>
+ 
