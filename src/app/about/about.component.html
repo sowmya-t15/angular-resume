@@ -1,8 +1,20 @@
 <div class="container about-section">
-    
+  <div class="section-header">
     <h2 class="section-title">{{ aboutTitle }}</h2>
+    <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+      <i class="edit-icon">✏️</i> Edit
+    </button>
+  </div>
   
-   
-    <p class="about-text">{{ aboutDescription }}</p>
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
   
-    </div>
+  <p class="about-text">{{ aboutDescription }}</p>
+</div>
+
+<app-edit-about 
+  *ngIf="showEditPopup" 
+  [currentDescription]="aboutDescription"
+  (saveDescription)="saveDescription($event)"
+  (closePopup)="closeEditPopup()"
+></app-edit-about>
