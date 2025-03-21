@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FirebaseService {
-  private baseUrl = 'https://angulartest-93e44-default-rtdb.asia-southeast1.firebasedatabase.app/';
+  private baseUrl = 'https://angularresume-1c138-default-rtdb.asia-southeast1.firebasedatabase.app/';
 
   constructor(private http: HttpClient) { }
 

@@ -15,4 +15,9 @@ import { MainComponent } from './main/main.component';
 })
 export class AppComponent {
   title = 'angular-project';
+  showContent = false; // Default is false, so only the landing page shows initially
+
+  enterApp() {
+    this.showContent = true; // Clicking the button enables the main content
+  }
 }
