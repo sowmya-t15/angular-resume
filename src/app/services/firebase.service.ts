@@ -39,4 +39,24 @@ export class FirebaseService {
   updateEducationData(educationData: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/resume/education.json`, educationData);
   }
+  
+  // Get projects data from Firebase
+  getProjectsData(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/resume/projects.json`);
+  }
+
+  // Update projects data in Firebase
+  updateProjectsData(projectsData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/resume/projects.json`, projectsData);
+  }
+  
+  // Get skills data from Firebase
+  getSkillsData(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/resume/skills.json`);
+  }
+
+  // Update skills data in Firebase
+  updateSkillsData(skillsData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/resume/skills.json`, skillsData);
+  }
 }

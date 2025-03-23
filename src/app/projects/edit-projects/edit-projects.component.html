@@ -1,0 +1,38 @@
+<div class="edit-popup-overlay">
+  <div class="edit-popup">
+    <h2>Edit Projects</h2>
+    
+    <div class="projects-container">
+      <div *ngFor="let project of editableProjects; let i = index" class="project-form">
+        <button class="btn btn-danger remove-btn" (click)="removeProject(i)" title="Remove this project">
+          &times;
+        </button>
+        
+        <div class="form-group">
+          <label for="title-{{i}}">Project Title *</label>
+          <input type="text" id="title-{{i}}" class="form-control" [(ngModel)]="project.title" placeholder="e.g. Portfolio Website">
+        </div>
+        
+        <div class="form-group">
+          <label for="description-{{i}}">Description *</label>
+          <textarea id="description-{{i}}" class="form-control" [(ngModel)]="project.description" placeholder="Describe your project" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="btn btn-success add-btn" (click)="addProject()">
+        + Add Project
+      </button>
+    </div>
+    
+    <div class="button-group">
+      <button class="btn btn-secondary" (click)="cancel()">
+        Cancel
+      </button>
+      <button class="btn btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
+</div>
