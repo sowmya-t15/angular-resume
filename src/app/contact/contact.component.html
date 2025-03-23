@@ -1,9 +1,25 @@
 <div class="contact-container">
-    <h2>Contact Me</h2>
-    <div *ngFor="let contact of contactList" class="contact-card">
-        <h3>{{ contact.name }}</h3>
-        <p><strong>Email:</strong> {{ contact.email }}</p>
-        <p><strong>Phone:</strong> {{ contact.phone }}</p>
-        <p><strong>Message:</strong> {{ contact.message }}</p>
+    <div class="section-header">
+        <h2>Contact Me</h2>
+        <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+            <i class="edit-icon">✏️</i> Edit
+        </button>
+    </div>
+    
+    <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+    
+    <div class="contact-card">
+        <h3>{{ contactInfo.name }}</h3>
+        <p><strong>Email:</strong> {{ contactInfo.email }}</p>
+        <p><strong>Phone:</strong> {{ contactInfo.phone }}</p>
+        <p><strong>Message:</strong> {{ contactInfo.message }}</p>
     </div>
 </div>
+
+<app-edit-contact
+    *ngIf="showEditPopup"
+    [contactInfo]="contactInfo"
+    (saveContact)="saveContact($event)"
+    (closePopup)="closeEditPopup()"
+></app-edit-contact>
