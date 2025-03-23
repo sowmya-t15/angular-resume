@@ -59,4 +59,14 @@ export class FirebaseService {
   updateSkillsData(skillsData: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/resume/skills.json`, skillsData);
   }
+  
+  // Get contact data from Firebase
+  getContactData(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/resume/contact.json`);
+  }
+
+  // Update contact data in Firebase
+  updateContactData(contactData: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/resume/contact.json`, contactData);
+  }
 }
