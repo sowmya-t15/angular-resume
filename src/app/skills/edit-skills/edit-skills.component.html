@@ -1,0 +1,40 @@
+<div class="edit-popup-overlay">
+  <div class="edit-popup">
+    <h2>Edit Skills</h2>
+    
+    <div class="skills-container">
+      <div *ngFor="let skill of editableSkills; let i = index" class="skill-form">
+        <button class="btn btn-danger remove-btn" (click)="removeSkill(i)" title="Remove this skill">
+          &times;
+        </button>
+        
+        <div class="form-group">
+          <label for="name-{{i}}">Skill Name *</label>
+          <input type="text" id="name-{{i}}" class="form-control" [(ngModel)]="skill.name" placeholder="e.g. Angular">
+        </div>
+        
+        <div class="form-group">
+          <label for="level-{{i}}">Skill Level *</label>
+          <select id="level-{{i}}" class="form-control" [(ngModel)]="skill.level">
+            <option *ngFor="let level of skillLevels" [value]="level">{{ level }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="btn btn-success add-btn" (click)="addSkill()">
+        + Add Skill
+      </button>
+    </div>
+    
+    <div class="button-group">
+      <button class="btn btn-secondary" (click)="cancel()">
+        Cancel
+      </button>
+      <button class="btn btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="edit-popup-overlay">
+  <div class="edit-popup">
+    <h2>Edit Experience</h2>
+    
+    <div class="experiences-container">
+      <div *ngFor="let exp of editedExperiences; let i = index" class="experience-form">
+        <h3>Experience {{i + 1}}</h3>
+        
+        <div class="form-group">
+          <label for="company-{{i}}">Company:</label>
+          <input type="text" id="company-{{i}}" [(ngModel)]="exp.company" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="role-{{i}}">Role:</label>
+          <input type="text" id="role-{{i}}" [(ngModel)]="exp.role" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="duration-{{i}}">Duration:</label>
+          <input type="text" id="duration-{{i}}" [(ngModel)]="exp.duration" class="form-control">
+        </div>
+        
+        <button (click)="removeExperience(i)" class="btn btn-danger remove-btn">Remove</button>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button (click)="addExperience()" class="btn btn-success add-btn">Add Experience</button>
+    </div>
+    
+    <div class="button-group">
+      <button (click)="save()" class="btn btn-primary">Save</button>
+      <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+    </div>
+  </div>
+</div>

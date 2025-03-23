@@ -1,31 +1,65 @@
 .about-section {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
   max-width: 800px;
-  margin: 30px auto;
-  padding: 25px 30px;
-  background: linear-gradient(135deg, #7b5ed6, #a873e9); /* Same as Skills Section */
-  border-radius: 15px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  animation: fadeIn 0.6s ease-in-out forwards;
 }
 
-/* Section Title */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .section-title {
+  color: #343a40;
+  margin: 0;
   font-size: 1.8rem;
-  font-weight: bold;
-  color: white; /* White text */
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
 }
 
-/* Description Text */
 .about-text {
-  font-size: 1.1rem;
-  color: #eee; /* Light text for contrast */
   line-height: 1.6;
+  color: #495057;
   text-align: justify;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.edit-icon {
+  font-size: 1rem;
+}
+
+.loading-indicator {
+  text-align: center;
+  color: #6c757d;
+  margin: 10px 0;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
   padding: 10px;
+  margin: 10px 0;
 }
 
 /* Fade-in Animation */
