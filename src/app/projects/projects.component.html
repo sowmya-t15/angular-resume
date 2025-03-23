@@ -1,6 +1,13 @@
 <div class="projects-container">
-  <h2 class="projects-title">My Projects</h2>
- 
+  <div class="section-header">
+    <h2 class="projects-title">My Projects</h2>
+    <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+      <i class="edit-icon">✏️</i> Edit
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
 
   <ul class="projects-list">
     <li *ngFor="let project of projects" class="project-card">
@@ -10,3 +17,9 @@
   </ul>
 </div>
 
+<app-edit-projects
+  *ngIf="showEditPopup"
+  [projects]="projects"
+  (saveProjects)="saveProjects($event)"
+  (closePopup)="closeEditPopup()"
+></app-edit-projects>

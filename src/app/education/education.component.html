@@ -1,9 +1,24 @@
 <div class="education-container">
-    <h2> Education</h2>
-    <div *ngFor="let edu of educationList" class="education-card">
-      <h3>{{ edu.degree }}</h3>
-      <p><strong>{{ edu.institution }}</strong> ({{ edu.year }})</p>
-      <p>{{ edu.description }}</p>
-    </div>
+  <div class="section-header">
+    <h2>Education</h2>
+    <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+      <i class="edit-icon">✏️</i> Edit
+    </button>
   </div>
   
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+  <div *ngFor="let edu of educationList" class="education-card">
+    <h3>{{ edu.degree }}</h3>
+    <p><strong>{{ edu.institution }}</strong> ({{ edu.year }})</p>
+    <p>{{ edu.description }}</p>
+  </div>
+</div>
+
+<app-edit-education 
+  *ngIf="showEditPopup" 
+  [educationList]="educationList"
+  (saveEducation)="saveEducation($event)"
+  (closePopup)="closeEditPopup()"
+></app-edit-education>

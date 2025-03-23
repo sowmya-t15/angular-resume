@@ -1,8 +1,26 @@
-<h2> My Skills</h2>
-<p>Here are some of the technologies and skills I am proficient in:</p>
+<div class="skills-container">
+  <div class="section-header">
+    <h2>My Skills</h2>
+    <button *ngIf="authService.isLoggedIn" class="edit-button" (click)="openEditPopup()">
+      <i class="edit-icon">✏️</i> Edit
+    </button>
+  </div>
+  
+  <div *ngIf="isLoading" class="loading-indicator">Loading...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+  
+  <p>Here are some of the technologies and skills I am proficient in:</p>
 
-<ul>
-  <li *ngFor="let skill of skills">
-    <strong>{{ skill.name }}</strong> - {{ skill.level }}
-  </li>
-</ul>
+  <ul class="skills-list">
+    <li *ngFor="let skill of skills" class="skill-item">
+      <strong>{{ skill.name }}</strong> - {{ skill.level }}
+    </li>
+  </ul>
+</div>
+
+<app-edit-skills
+  *ngIf="showEditPopup"
+  [skills]="skills"
+  (saveSkills)="saveSkills($event)"
+  (closePopup)="closeEditPopup()"
+></app-edit-skills>
