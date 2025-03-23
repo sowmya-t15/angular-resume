@@ -1,0 +1,48 @@
+<div class="edit-popup-overlay">
+  <div class="edit-popup">
+    <h2>Edit Education</h2>
+    
+    <div class="education-container">
+      <div *ngFor="let edu of editableEducationList; let i = index" class="education-form">
+        <button class="btn btn-danger remove-btn" (click)="removeEducation(i)" title="Remove this education">
+          &times;
+        </button>
+        
+        <div class="form-group">
+          <label for="degree-{{i}}">Degree *</label>
+          <input type="text" id="degree-{{i}}" class="form-control" [(ngModel)]="edu.degree" placeholder="e.g. Bachelor of Science in Computer Science">
+        </div>
+        
+        <div class="form-group">
+          <label for="institution-{{i}}">Institution *</label>
+          <input type="text" id="institution-{{i}}" class="form-control" [(ngModel)]="edu.institution" placeholder="e.g. University Name">
+        </div>
+        
+        <div class="form-group">
+          <label for="year-{{i}}">Year *</label>
+          <input type="text" id="year-{{i}}" class="form-control" [(ngModel)]="edu.year" placeholder="e.g. 2020 - 2023">
+        </div>
+        
+        <div class="form-group">
+          <label for="description-{{i}}">Description</label>
+          <textarea id="description-{{i}}" class="form-control" [(ngModel)]="edu.description" placeholder="Describe your education, achievements, etc." rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <button class="btn btn-success add-btn" (click)="addEducation()">
+        + Add Education
+      </button>
+    </div>
+    
+    <div class="button-group">
+      <button class="btn btn-secondary" (click)="cancel()">
+        Cancel
+      </button>
+      <button class="btn btn-primary" (click)="save()">
+        Save
+      </button>
+    </div>
+  </div>
+</div>
