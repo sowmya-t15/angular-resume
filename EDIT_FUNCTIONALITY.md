@@ -28,7 +28,7 @@ The application uses a simple authentication system to control access to editing
 
 The application uses Firebase Realtime Database to persist data:
 
-- Base URL: `https://angulartest-93e44-default-rtdb.asia-southeast1.firebasedatabase.app/`
+- Base URL: `https://demo-93e44-default-rtdb.asia-southeast1.firebasedatabase.app/`
 - Data is organized by section (e.g., `/resume/about.json`, `/resume/experience.json`)
 - HTTP requests are used to fetch and update data
 - If Firebase data is unavailable, the application falls back to default content
